@@ -12,7 +12,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
-    # TODO: send the sms to notify
+    # TODO: read the setting before the system sends the sms notification
+    twilio_service = TwilioService.new
+    twilio_service.send_sms("New User #{resource.email} Just Signed up!")
   end
 
   # GET /resource/edit
