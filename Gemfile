@@ -74,5 +74,4 @@ group :test do
 
 end
 
-gem "devise", "~> 4.9"
 gem 'twilio-ruby', '~> 7.1.1'
