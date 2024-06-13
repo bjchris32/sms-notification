@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "2.7.2"
 
+gem 'dotenv', groups: [:development, :test], require: 'dotenv/load'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.8", ">= 7.0.8.4"
 
@@ -73,5 +75,4 @@ group :test do
 end
 
 gem "devise", "~> 4.9"
-
 gem 'twilio-ruby', '~> 7.1.1'
