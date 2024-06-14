@@ -1,24 +1,22 @@
-# README
+## Applying Rails 7 Turbo
+### Generated Devise views
+* Welcome page
+    * Sign in button -> redirect to sign in page
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Signin page
+    * Log in button -> redirect to home page
+    * Sign up button -> redirect to sign up page
 
-Things you may want to cover:
+* Signup page
+    * Sign up button -> redirect to home page
 
-* Ruby version
+### Optimization with Turbo
+* Welcome page
+    * Sign in button -> replace button with the signin form
 
-* System dependencies
+* Signin page
+    * Log in button -> redirect to home page
+    * Sign up button -> redirect to signup page
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Signup page
+    * Sign up button -> redirect to home page
