@@ -7,6 +7,7 @@
   <%= link_to "Log Out", logout_path %>
 <% else %>
   <p>Be one of the <%= @user_count %> users on this site</p>
-  <%= link_to "Sign Up", signup_path %> or
-  <%= link_to "Log In", login_path %>
+  <%= link_to "Sign Up", signup_path, data: { turbo_frame: "login_signup_frame" } %> or
+  <%= link_to "Log In", login_path, data: { turbo_frame: "login_signup_frame" } %>
+  <%= turbo_frame_tag "login_signup_frame" %>
 <% end %>
