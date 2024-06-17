@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       # TODO: read the setting before the system sends the sms notification
-      SendSmsJob.perform_later(@user)
+      SendSmsJob.perform_async(@user.email)
       redirect_to root_url, notice: "Thank you for signing up!"
     else
       render turbo_stream: turbo_stream.replace("signup-form", partial: "form")
