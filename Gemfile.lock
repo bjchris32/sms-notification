@@ -145,7 +145,6 @@ GEM
       racc (~> 1.4)
     nokogiri (1.15.6-x86_64-darwin)
       racc (~> 1.4)
-    orm_adapter (0.5.0)
     pg (1.5.6)
     psych (5.1.2)
       stringio
@@ -187,12 +186,10 @@ GEM
     rake (13.2.1)
     rdoc (6.7.0)
       psych (>= 4.0.0)
+    redis (4.8.1)
     regexp_parser (2.9.2)
     reline (0.5.9)
       io-console (~> 0.5)
-    responders (3.1.1)
-      actionpack (>= 5.2)
-      railties (>= 5.2)
     rexml (3.3.0)
       strscan
     ruby2_keywords (0.0.5)
@@ -224,8 +221,6 @@ GEM
       nokogiri (>= 1.6, < 2.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
-    warden (1.2.9)
-      rack (>= 2.0.9)
     web-console (4.2.1)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -259,6 +254,7 @@ DEPENDENCIES
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.8, >= 7.0.8.4)
+  redis (~> 4.0)
   selenium-webdriver
   sprockets-rails
   stimulus-rails
