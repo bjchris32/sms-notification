@@ -1,6 +1,6 @@
 class SendSmsJob < ApplicationJob
-  retry_on Exception, wait: :exponentially_longer, attempts: 5
   queue_as :user_registration
+  sidekiq_options retry: 3
 
   def perform(user)
     twilio_service = TwilioService.new
