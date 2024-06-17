@@ -1,12 +1,17 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<%= turbo_stream_from "users" %>
+<h1>Welcome!</h1>
+
+<%= prefix_message = (current_user ? 'Thanks for joining' : 'Sign up and join')%>
+<span id='users_count_message'>
+  <%= render partial: 'users/user_count_message', locals: { user_count: @user_count } %>
+</span>
+<br/>
 
 <% if current_user %>
-  Logged in as <%= current_user.email %>.
-  <p>Thanks for joining to be one of the <%= @user_count %> users on this site</p>
+  You're logged in as <%= current_user.email %>.
+  <br/>
   <%= link_to "Log Out", logout_path, data: { turbo_method: :delete } %>
 <% else %>
-  <p>Be one of the <%= @user_count %> users on this site</p>
   <%= link_to "Sign Up", signup_path, data: { turbo_frame: "login_signup_frame" } %> or
   <%= link_to "Log In", login_path, data: { turbo_frame: "login_signup_frame" } %>
   <%= turbo_frame_tag "login_signup_frame" %>
