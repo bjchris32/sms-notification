@@ -21,6 +21,15 @@ rake db:create
 rake db:migrate
 ```
 
+* Start the sidekiq in background and log to `log/sidekiq.log`
+```
+nohup bundle exec sidekiq -e development &>./log/sidekiq.log &
+
+# kill the sidekiq after any config modification
+ps aux | grep sidekiq
+kill -TERM PID
+```
+
 * Start the rails server
 ```
 bundle _2.4.22_ exec rails s
@@ -48,4 +57,3 @@ bundle _2.4.22_ exec rails s
 
 * Signup page
     * Sign up button -> redirect to home page
-=======
