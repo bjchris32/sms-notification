@@ -35,6 +35,8 @@ kill -TERM PID
 bundle _2.4.22_ exec rails s
 ```
 
+* Monitor the job execution at the route: http://localhost:3000/sidekiq/
+
 ## Applying Rails 7 Turbo
 ### Generated Devise views
 * Welcome page
