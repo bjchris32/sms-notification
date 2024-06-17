@@ -1,9 +1,9 @@
-class SendSmsJob < ApplicationJob
-  queue_as :user_registration
-  sidekiq_options retry: 3
+class SendSmsJob
+  include Sidekiq::Job
+  sidekiq_options queue: 'user_registration', retry: 2
 
-  def perform(user)
+  def perform(user_email)
     twilio_service = TwilioService.new
-    twilio_service.send_sms("New User #{user.email} Just Signed up!")
+    twilio_service.send_sms("New User #{user_email} Just Signed up!")
   end
 end
