@@ -15,6 +15,12 @@ rails version: Rails 7.0.8.4
 docker-compose up -d
 ```
 
+* Set up database
+```
+rake db:create
+rake db:migrate
+```
+
 * Start the rails server
 ```
 bundle _2.4.22_ exec rails s
@@ -42,3 +48,4 @@ bundle _2.4.22_ exec rails s
 
 * Signup page
     * Sign up button -> redirect to home page
+=======
