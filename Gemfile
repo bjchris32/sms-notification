@@ -75,3 +75,4 @@ group :test do
 end
 
 gem 'twilio-ruby', '~> 7.1.1'
+gem 'sidekiq'
