@@ -8,8 +8,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       # TODO: read the setting before the system sends the sms notification
-      twilio_service = TwilioService.new
-      twilio_service.send_sms("New User #{@user.email} Just Signed up!")
+      SendSmsJob.perform_later(@user)
       redirect_to root_url, notice: "Thank you for signing up!"
     else
       render turbo_stream: turbo_stream.replace("signup-form", partial: "form")
