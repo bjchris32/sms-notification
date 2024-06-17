@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: {
-    registrations: 'users/registrations'
-  }
+  get 'signup', to: 'users#new', as: 'signup'
+  get 'login', to: 'sessions#new', as: 'login'
+  delete 'logout', to: 'sessions#destroy', as: 'logout'
+  resources :users, only: [:create]
+  resources :sessions, only: [:create]
 
   root 'home#index'
 end
