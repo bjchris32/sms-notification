@@ -9,7 +9,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to root_url, notice: "Thank you for signing up!"
     else
-      render :new, status: :unprocessable_entity
+      render turbo_stream: turbo_stream.replace("signup-form", partial: "form")
     end
   end
 
