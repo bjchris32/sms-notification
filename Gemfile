@@ -76,3 +76,4 @@ end
 
 gem 'twilio-ruby', '~> 7.1.1'
 gem 'sidekiq'
+gem "tailwindcss-rails", "~> 2.0"
