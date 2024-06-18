@@ -1,5 +1,5 @@
-<%= turbo_frame_tag "login_signup_frame" do %>
-  <h1>Log In</h1>
+<%= turbo_frame_tag "login_signup_frame", class: "p-6 max-w-lg mx-auto bg-white rounded-xl shadow-md space-y-6" do %>
+  <h1 class="text-2xl font-bold text-center text-gray-800">Log In</h1>
 
   <%= render "form" %>
 <% end %>

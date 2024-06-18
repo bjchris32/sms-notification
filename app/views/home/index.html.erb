@@ -1,18 +1,25 @@
 <%= turbo_stream_from "users" %>
-<h1>Welcome!</h1>
+<div class="p-6 max-w-lg mx-auto bg-white rounded-xl shadow-md space-y-4">
+  <h1 class="font-bold text-4xl text-blue-500">Welcome!</h1>
 
-<%= prefix_message = (current_user ? 'Thanks for joining' : 'Sign up and join')%>
-<span id='users_count_message'>
-  <%= render partial: 'users/user_count_message', locals: { user_count: @user_count } %>
-</span>
-<br/>
 
-<% if current_user %>
-  You're logged in as <%= current_user.email %>.
-  <br/>
-  <%= link_to "Log Out", logout_path, data: { turbo_method: :delete } %>
-<% else %>
-  <%= link_to "Sign Up", signup_path, data: { turbo_frame: "login_signup_frame" } %> or
-  <%= link_to "Log In", login_path, data: { turbo_frame: "login_signup_frame" } %>
-  <%= turbo_frame_tag "login_signup_frame" %>
-<% end %>
+  <p class="text-gray-700">
+    <%= prefix_message = (current_user ? 'Thanks for joining' : 'Sign up and join')%>
+    <span id='users_count_message'>
+      <%= render partial: 'users/user_count_message', locals: { user_count: @user_count } %>
+    </span>
+  </p>
+
+  <div class="mt-4">
+    <% if current_user %>
+      <p class="text-gray-700">
+        You're logged in as <%= current_user.email %>.
+      </p>
+      <%= link_to "Log Out", logout_path, data: { turbo_method: :delete }, class: "mt-2 inline-block px-4 py-2 bg-red-500 text-white rounded hover:bg-red-700" %>
+    <% else %>
+      <%= link_to "Sign Up", signup_path, data: { turbo_frame: "login_signup_frame" }, class: "inline-block px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700" %> or
+      <%= link_to "Log In", login_path, data: { turbo_frame: "login_signup_frame" }, class: "inline-block px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700" %>
+      <%= turbo_frame_tag "login_signup_frame" %>
+    <% end %>
+  </div>
+</div>
