@@ -26,6 +26,9 @@ rake db:create
 rake db:migrate
 ```
 
+* Env variable for twilio.
+Remember to rename the `.env.sample` to `.env` and assign the corresponding values from your twilio account.
+
 * Start the sidekiq server on local machine and log to `log/sidekiq.log`
 ```
 nohup bundle exec sidekiq -e development &>./log/sidekiq.log &
@@ -49,3 +52,14 @@ rake tailwindcss:build
 ps aux | grep sidekiq
 kill -TERM PID
 ```
+
+## Time spent
+* Env setup: 1.5 hour
+* Login system: 1 hour
+* Turbo frame: 3 hour
+* sms service: 1 hour
+* Background job: 2 hour
+* CSS adjustment: 1 hour
+* Video making: 1.5 hour
+
+Total: 11 hours
